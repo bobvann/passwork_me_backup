@@ -7,11 +7,27 @@ DATAURL="https://passwork.me/api2/getData"
 
 echoerr "Passwork.me backup"
 
-echoerr -n "E-mail: "
-read EMAIL
-echoerr -n "Password: "
-read -s PASSWORD
-echoerr ""
+EMAIL=""
+PASSWORD=""
+
+if [[ "$#" -eq "2" ]]
+then
+	EMAIL=$1
+	PASSWORD=$2
+else
+	echoerr -n "E-mail: "
+	read EMAIL
+	echoerr -n "Password: "
+	read -s PASSWORD
+	echoerr ""
+fi
+
+
+echo $EMAIL
+echo $PASSWORD
+
+exit 0
+
 echoerr "Processing"
 
 RESP=$(curl -sS --data "email=$EMAIL&password=$PASSWORD" $OPENURL)
