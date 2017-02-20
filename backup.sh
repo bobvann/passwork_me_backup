@@ -23,9 +23,6 @@ else
 fi
 
 
-echo $EMAIL
-echo $PASSWORD
-
 exit 0
 
 echoerr "Processing"
@@ -37,7 +34,7 @@ CHECKF=${RESP:13:5}
 
 if [ "$CHECKF" == "false" ]
 then
-	echo "Wrong email/password"
+	echoerr "Wrong email/password"
 	exit 1
 fi
 
