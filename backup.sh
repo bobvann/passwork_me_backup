@@ -23,8 +23,6 @@ else
 fi
 
 
-exit 0
-
 echoerr "Processing"
 
 RESP=$(curl -sS --data "email=$EMAIL&password=$PASSWORD" $OPENURL)
